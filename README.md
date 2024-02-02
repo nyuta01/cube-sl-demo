@@ -1,5 +1,10 @@
 # Cube Semantic Layer Demo
 
+## Prerequisites
+- Docker
+- Docker Compose
+- go-migrate
+
 ## Quick Start
 ```
 $ docker-compose up
@@ -22,3 +27,7 @@ $ curl --request POST \
 
 {"data":{"cube":[{"products":{"count":4},"productCategories":{"name":"Furniture"}},{"products":{"count":3},"productCategories":{"name":"Electronics"}},{"products":{"count":2},"productCategories":{"name":"Books"}}]}}
 ```
+
+## References
+- https://github.com/cube-js/cube/tree/master/examples
+- https://cube.dev/blog/cubejs-open-source-dashboard-framework-ultimate-guide
