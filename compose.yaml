@@ -1,0 +1,25 @@
+services:
+  cube:
+    image: cubejs/cube:latest
+    ports:
+      - 4000:4000  # Cube.js API and Developer Playground
+      - 3000:3000  # Dashboard app, if created
+    environment:
+      - CUBEJS_DB_TYPE=postgres
+      - CUBEJS_DB_HOST=postgres
+      - CUBEJS_DB_USER=cube
+      - CUBEJS_DB_PASS=12345
+      - CUBEJS_DB_NAME=sl-demo
+
+      - CUBEJS_API_SECRET=SECRET
+      - CUBEJS_DEV_MODE=true
+    volumes:
+      - .:/cube/conf
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: cube
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: sl-demo
+    ports:
+      - 5432:5432
